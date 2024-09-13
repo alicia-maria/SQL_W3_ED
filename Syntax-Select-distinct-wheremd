@@ -1,0 +1,120 @@
+
+# Introduction 
+
+## What is SQL ?
+- Stands for Structured Query Language 
+- Lets you access and manipulate databases
+
+## What can SQL do?
+- Execute queries against a database
+- Can retrieve data from a database 
+- Insert , update, delete records 
+- Can create databases
+- Create stored procedures 
+- Create views in database
+- Set permissions on tables. Procedures, and view
+
+## All must support basic commands 
+1. SELECT
+1. UPDATE
+1. DELETE
+1. INSERT
+1. WHERE
+1. DISTINCT 
+
+## RDMS
+- Stands for relational database management system 
+- RDMS are the basic for SQL and for all modern database systems 
+- Data in RDBMS are stored as *database objects* called tables
+- *Tables* are a collection of related data entries and it consists of columns and rows 
+- Tables are broken into smaller entities called *fields* which describe a specific attribute about a row also known as a *record*. Records contain unique values about an individual entry
+ 
+# SQL Syntax 
+
+## SQL Statements 
+Statements consist of keywords that are easy to understand 
+	SELECT * FROM customers; 
+** This statement will grab all the information from the customers table 
+
+## Database tables 
+- Often contain one or more tables
+- Tables are identified by a specific name and contains records with unique data 
+
+## Semicolon after SQL statements?
+- Some but not all database systems might require a semicolon [;] at the end of each statement
+- Semicolon is the standard way to separate each SQL statement in database system and allows more than 1 SQL statement to be executed at the the same time from a server
+
+Important Commands and Meaning
+SELECT = extract data from database 
+UPDATE = updates data in a database
+DELETE = delta data in a database 
+INSERT INTO = adds new data into a database 
+CREATE DATABASE = creates new database 
+ALTER DATABASE = modifies a database 
+CREATE TABLE = creates a new table 
+ALTER TABLE - creates a new table 
+DROP TABLE = deletes a database 
+CREATE INDEX = creates an index 
+DRP INDEX = deletes index 
+DISTINCT = will pull from a table that are different 
+
+# SQL [ SELECT ] Statements 
+
+## SELECT - Statements 
+Are used to select data from a database 
+
+## SELECT *all* columns 
+If you want to select all column from a specific table you can used 
+SELECT * 
+
+If you want to select specific field from a table you would use the following syntax
+	SELECT column1, column2, …
+FROM table_name;
+
+Ex - SELECT City , Zipcode FROM Customers; 
+
+If you want data from that same table with different [unique/ different] records you would do 
+SELECT DISTINCT 
+
+Syntax 
+SELECT DISTINCT column1, column2, ...
+FROM table_name;
+
+Ex - SELECT DISTINCT country FROM Customers; 
+
+By using DISTINCT we can call a function called COUNT 
+
+COUNT = allows us to return the number of different countries stored within a table 
+
+Syntax
+ 
+SELECT COUNT(DISTINCT Country) FROM Customers
+
+# SQL Where Clause 
+## WHERE 
+Is used to filter records 
+It is used to extract only those records that fulfill a specified condition 
+
+Syntax 
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+ Ex - SELECT * FROM Customers
+      WHERE Country='Mexico';
+- WHERE is not an exclusive clause to SELECT statements 
+- WHERE can also be used in UPDATE and DELETE ect. Commands.
+
+## Text fields V. Numeric fields 
+- SQL requires [‘] around ‘TEXT VALUES’ 
+- SQL requires for numerical field NOT to be enclosed with quotes 
+
+Syntax 
+SELECT * FROM Customers
+WHERE CustomerID=1;
+
+In where statements you can use more that just [ = ] functions you can do more specific searches such as the following…
+
+Syntax 
+SELECT * FROM Customers
+WHERE CustomerID > 80;
